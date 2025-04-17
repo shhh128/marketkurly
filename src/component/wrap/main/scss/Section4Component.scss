@@ -1,0 +1,185 @@
+#section4,
+#section5 {
+    padding-top: 90px;
+    width: 100%;
+    .container {
+        width: 100%;
+        max-width: 1050px;
+        margin: 0 auto;
+        .content {
+            width: 100%;
+            padding-top: 40px;
+            .slide-container {
+                width: 100%;
+                .slide-view {
+                    width: 100%;
+                    overflow: hidden;
+                    .slide-wrap {
+                        width: 1068px * 1;
+                        display: flex;
+                        .slide {
+                            width: 33.333%;
+                            &.slide1 {
+                                div {
+                                    ul {
+                                        li {
+                                            cursor: defaultㄴ;
+                                            h2 {
+                                                font-size: 28px;
+                                                font-weight: 600;
+                                                color: #333;
+                                                padding-bottom: 15px;                                            
+                                            }
+                                            h3 {
+                                                font-size: 18px;
+                                                font-weight: 400;
+                                                color: #666;
+                                                padding: 10px 0 40px 0;
+                                            }
+                                            h4 {
+                                                font-size: 16px;
+                                                font-weight: 400;
+                                                color: #999;
+                                            }
+                                            h5 {
+                                                padding-bottom: 40px;
+                                                svg {
+                                                    width: 28px;
+                                                    height: 28px;
+                                                }
+                                                span {
+                                                    color: #333;
+                                                    font-weight: 700;
+                                                    font-family: Arial, Helvetica, sans-serif;
+                                                    em {
+                                                        font-size: 35px;
+                                                    }
+                                                    i{
+                                                        font-size: 29px;
+                                                        margin: 0 2px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            a {
+                                width: auto;
+                                display: block;
+                                margin-right: 18px;
+                                .box {
+                                    width: 100%;
+                                    overflow: hidden;
+                                    &.row1-box {
+                                        position: relative;
+                                        border-radius: 4px;
+                                        span {
+                                            z-index: 1;
+                                            position: relative;
+                                            display: block;
+                                            width: 100%;
+                                            img {
+                                                width: 100%;
+                                                transition: all 0.6s;
+                                            }
+                                        }
+                                        em {
+                                            z-index: 2;
+                                            position: absolute;
+                                            left: 0;
+                                            bottom: 0;
+                                            display: block;
+                                            width: 125px;                                                
+                                            img {
+                                                width: 100%;
+                                                transition: all 0.6s;
+                                            }
+                                        }
+                                        &:hover {
+                                            span {
+                                                img {
+                                                    transform: scale(1.08);
+                                                }
+                                            }
+                                            em {
+                                                img {
+                                                    transform: scale(1.08);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.row2-box {
+                                        padding-top: 6px;
+                                        ul {
+                                            width: 100%;
+                                            li {
+                                                width: 100%;
+                                                line-height: 180%;
+                                                &:nth-child(1){
+                                                    button {
+                                                        width: 100%;
+                                                        height: 35px;
+                                                        border-radius: 4px;
+                                                        background: rgb(255,255,255);
+                                                        border: 1px solid rgb(221,221,221);
+                                                        cursor: pointer;
+                                                        svg {
+                                                            width: 22px;
+                                                            margin-right: 3px;
+                                                        }
+                                                        em {
+                                                            font-size: 16px;
+                                                        }
+                                                    }
+                                                }
+                                                &:nth-child(2){
+                                                    padding-top: 8px;
+                                                    h3 {
+                                                        font-size: 16px;
+                                                        font-weight: 500;
+                                                    }
+                                                }
+                                                &:nth-child(3){
+                                                    padding-top: 10px;
+                                                    span {
+                                                        color: #999;
+                                                        font-size: 14px;
+                                                        text-decoration: line-through;
+                                                    }
+                                                }
+                                                &:nth-child(4){
+                                                    strong {
+                                                        font-size: 16px;
+                                                        font-weight: 600;
+                                                        &:nth-child(1) {
+                                                            color: rgb(250,98,47);
+                                                            margin-right: 5px;
+                                                        }
+                                                        &:nth-child(2) {
+                                                            color: rgb(34,34,34);
+                                                        }
+                                                    }
+                                                }
+                                                &:nth-child(5){
+                                                    padding-top: 8px;
+                                                    em {
+                                                        color: rgb(168,177,188);
+                                                        svg {
+                                                            width: 15px;
+                                                            margin-right: 5px;
+                                                        }
+                                                    }
+                                                }
+                                        }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,225 @@
+#section2,
+#section6 {
+  width: 100%;
+  padding-top: 90px;
+  background: #fff;
+}
+#section2 .container,
+#section6 .container {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+#section2 .container .title,
+#section6 .container .title {
+  width: 100%;
+  text-align: center;
+}
+#section2 .container .title h2,
+#section6 .container .title h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  padding-bottom: 15px;
+}
+#section2 .container .title h3,
+#section6 .container .title h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #999;
+}
+#section2 .container .content,
+#section6 .container .content {
+  width: 100%;
+  padding-top: 40px;
+}
+#section2 .container .content .slide-container,
+#section6 .container .content .slide-container {
+  width: 100%;
+  position: relative;
+}
+#section2 .container .content .slide-container .slide-view,
+#section6 .container .content .slide-container .slide-view {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap,
+#section6 .container .content .slide-container .slide-view .slide-wrap {
+  width: 5340px;
+  display: flex;
+  position: relative;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide {
+  width: 25%;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a {
+  width: auto;
+  display: block;
+  margin-right: 18px;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box {
+  width: 100%;
+  overflow: hidden;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box {
+  position: relative;
+  border-radius: 4px;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box span,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box span {
+  z-index: 1;
+  position: relative;
+  display: block;
+  width: 100%;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box span img,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box span img {
+  width: 100%;
+  transition: all 0.6s;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box em,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box em {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 125px;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box em img,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box em img {
+  width: 100%;
+  transition: all 0.6s;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box:hover span img,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box:hover span img {
+  transform: scale(1.08);
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box:hover em img,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row1-box:hover em img {
+  transform: scale(1.08);
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box {
+  padding-top: 6px;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul {
+  width: 100%;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li {
+  width: 100%;
+  line-height: 180%;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(1) button,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(1) button {
+  width: 100%;
+  height: 35px;
+  border-radius: 4px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(221, 221, 221);
+  cursor: pointer;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(1) button svg,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(1) button svg {
+  width: 22px;
+  margin-right: 3px;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(1) button em,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(1) button em {
+  font-size: 16px;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(2),
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(2) {
+  padding-top: 8px;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(2) h3,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(2) h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(3),
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(3) {
+  padding-top: 10px;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(3) span,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(3) span {
+  color: #999;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(4) strong,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(4) strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(4) strong:nth-child(1),
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(4) strong:nth-child(1) {
+  color: rgb(250, 98, 47);
+  margin-right: 5px;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(4) strong:nth-child(2),
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(4) strong:nth-child(2) {
+  color: rgb(34, 34, 34);
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(5),
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(5) {
+  padding-top: 8px;
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(5) em,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(5) em {
+  color: rgb(168, 177, 188);
+}
+#section2 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(5) em svg,
+#section6 .container .content .slide-container .slide-view .slide-wrap .slide a .box.row2-box ul li:nth-child(5) em svg {
+  width: 15px;
+  margin-right: 5px;
+}
+#section2 .container .content .slide-container .btn,
+#section6 .container .content .slide-container .btn {
+  z-index: 2;
+  position: absolute;
+  top: 132px;
+  border-radius: 50%;
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+#section2 .container .content .slide-container .btn.next-btn,
+#section6 .container .content .slide-container .btn.next-btn {
+  right: -30px;
+  opacity: 1;
+  transition: all 1s;
+}
+#section2 .container .content .slide-container .btn.next-btn.on,
+#section6 .container .content .slide-container .btn.next-btn.on {
+  opacity: 0;
+}
+#section2 .container .content .slide-container .btn.next-btn img,
+#section6 .container .content .slide-container .btn.next-btn img {
+  transform: rotate(180deg);
+  width: 100%;
+  height: 100%;
+}
+#section2 .container .content .slide-container .btn.prev-btn,
+#section6 .container .content .slide-container .btn.prev-btn {
+  left: -30px;
+  opacity: 1;
+  transition: all 1s;
+}
+#section2 .container .content .slide-container .btn.prev-btn.on,
+#section6 .container .content .slide-container .btn.prev-btn.on {
+  opacity: 0;
+}
+#section2 .container .content .slide-container .btn.prev-btn img,
+#section6 .container .content .slide-container .btn.prev-btn img {
+  width: 100%;
+  height: 100%;
+}

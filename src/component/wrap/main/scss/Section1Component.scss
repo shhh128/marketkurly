@@ -1,0 +1,86 @@
+#section1 {
+    width: 100%;
+    user-select: none;
+    .slide-container {
+        width: 100%;
+        max-width: 1900px;
+        margin: 0 auto;
+        position: relative;
+        .slide-view {
+            z-index: 1;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            .slide-wrap {
+                width: 100%*27;
+                display: flex;
+                position: relative;
+                margin-left: -100%;
+                left: -100% * 0;
+                .slide {
+                    width: 100%;
+                    a {
+                        display: block;
+                        width: 100%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .slide-btn {
+            z-index: 2;
+            position: absolute;
+            top:50%;
+            margin-top: -26px;
+            width: 52px;
+            height: 52px;
+            background: none;
+            border: 0;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 1s;
+            opacity: 0; 
+            &.on {
+                opacity: 1; 
+            }
+            &.next-btn {
+                right: 15%;
+            }
+            &.prev-btn {
+                left: 15%;
+                img {
+                    transform: rotate(180deg);
+                }
+            }
+            img {
+                width:100%;
+                height:100%;
+            }
+        }
+        .slide-count {
+            user-select: none;
+            z-index: 2;
+            position: absolute;
+            right: 28%;
+            bottom: 21px;
+            height: 23px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            color: #fff;
+            background: rgba(0,0,0,0.2);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 2px 8px 0 8px;
+            border-radius: 11.5px;
+            em {
+                font-style: normal;
+            }
+            i {
+                margin: 0 4px;
+            }
+        }
+    }
+}

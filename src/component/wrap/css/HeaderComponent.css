@@ -1,0 +1,275 @@
+#header {
+  z-index: 3;
+  position: relative;
+  width: 100%;
+  height: 156px;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.07);
+}
+#header .row {
+  width: 100%;
+  background: #fff;
+}
+#header .row.row1 {
+  height: 36px;
+}
+#header .row.row1 .container {
+  width: 100%;
+  max-width: 1050px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#header .row.row1 .container #aside ul {
+  display: flex;
+}
+#header .row.row1 .container #aside ul li {
+  font-size: 12px;
+}
+#header .row.row1 .container #aside ul li a {
+  color: rgb(51, 51, 51);
+}
+#header .row.row1 .container #aside ul li a span {
+  margin-left: 5px;
+}
+#header .row.row1 .container #aside ul li a span img {
+  width: 8px;
+}
+#header .row.row1 .container #aside ul li:first-child a {
+  color: rgb(95, 0, 128);
+  font-weight: 500;
+}
+#header .row.row1 .container #aside ul li i {
+  margin: 0 10px;
+  color: #ccc;
+}
+#header .row.row2 {
+  height: 64px;
+}
+#header .row.row2 .container {
+  width: 100%;
+  max-width: 1050px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+#header .row.row2 .container > div {
+  height: 48px;
+}
+#header .row.row2 .container > div.left {
+  width: 100%;
+  max-width: 325px;
+  margin: 0 auto 0 0;
+  display: flex;
+  align-items: center;
+}
+#header .row.row2 .container > div.left h1 span {
+  margin-right: 10px;
+}
+#header .row.row2 .container > div.left h1 span img {
+  width: 82px;
+}
+#header .row.row2 .container > div.left h1 a {
+  color: rgb(95, 0, 128);
+  font-size: 18px;
+  font-weight: 600;
+}
+#header .row.row2 .container > div.left i {
+  margin: 0 15px;
+  color: #ccc;
+}
+#header .row.row2 .container > div.left > a {
+  color: rgb(181, 181, 181);
+  font-size: 18px;
+  font-weight: 600;
+}
+#header .row.row2 .container > div.left > a:hover {
+  color: rgb(95, 0, 128);
+}
+#header .row.row2 .container > div.center {
+  width: 100%;
+  max-width: 400px;
+  min-width: 250px;
+  margin: 0 auto;
+  position: relative;
+}
+#header .row.row2 .container > div.center input {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(95, 0, 128);
+  font-size: 16px;
+  border-radius: 6px;
+  padding-left: 15px;
+  color: rgb(51, 51, 51);
+}
+#header .row.row2 .container > div.center input::-moz-placeholder {
+  color: #999;
+}
+#header .row.row2 .container > div.center input::placeholder {
+  color: #999;
+}
+#header .row.row2 .container > div.center button {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  border: 0;
+  background: transparent;
+  width: 48px;
+  height: 100%;
+  cursor: pointer;
+}
+#header .row.row2 .container > div.center button img {
+  width: 35px;
+}
+#header .row.row2 .container > div.center.on {
+  z-index: 4;
+  position: fixed;
+  right: 50%;
+  top: 10px;
+  max-width: 242px;
+  min-width: 150px;
+  height: 36px;
+  margin-right: -360px;
+}
+#header .row.row2 .container > div.center.on input {
+  border: 0;
+  background: rgb(247, 247, 247);
+}
+#header .row.row2 .container > div.center.on input::-moz-placeholder {
+  color: #999;
+  font-size: 11px;
+}
+#header .row.row2 .container > div.center.on input::placeholder {
+  color: #999;
+  font-size: 11px;
+}
+#header .row.row2 .container > div.center.on button {
+  width: 36px;
+}
+#header .row.row2 .container > div.center.on button img {
+  width: 30px;
+  filter: grayscale(1);
+}
+#header .row.row2 .container > div.right {
+  width: 100%;
+  max-width: 325px;
+  margin: 0 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#header .row.row2 .container > div.right a {
+  margin-left: 20px;
+}
+#header .row.row2 .container > div.right a img {
+  width: auto;
+}
+#header .row.row2 .container > div.right.on {
+  z-index: 4;
+  position: fixed;
+  right: 50%;
+  top: 4px;
+  margin-right: -525px;
+}
+#header .row.row3 {
+  height: 56px;
+}
+#header .row.row3.on {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.07);
+}
+#header .row.row3 .container {
+  width: 100%;
+  max-width: 1050px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+#header .row.row3 .container > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#header .row.row3 .container > div.left {
+  width: 100%;
+  max-width: 225px;
+  justify-content: flex-start;
+}
+#header .row.row3 .container > div.left.on {
+  max-width: 120px;
+}
+#header .row.row3 .container > div.left h1 a img {
+  width: auto;
+}
+#header .row.row3 .container > div.left h1 a span {
+  font-size: 16px;
+  color: rgb(90, 90, 90);
+  margin-left: 10px;
+  font-weight: 600;
+}
+#header .row.row3 .container > div.left h1 a:hover span {
+  color: rgb(95, 0, 128);
+}
+#header .row.row3 .container > div.center {
+  width: 100%;
+  max-width: 600px;
+}
+#header .row.row3 .container > div.center.on {
+  max-width: 480px;
+  margin: auto auto auto 0;
+}
+#header .row.row3 .container > div.center #nav {
+  width: 100%;
+}
+#header .row.row3 .container > div.center #nav ul {
+  width: 100%;
+  display: flex;
+}
+#header .row.row3 .container > div.center #nav ul li {
+  width: 25%;
+  text-align: center;
+}
+#header .row.row3 .container > div.center #nav ul li a {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(90, 90, 90);
+  padding-bottom: 1px;
+  border-bottom: 1px solid transparent;
+}
+#header .row.row3 .container > div.center #nav ul li a:hover {
+  color: rgb(95, 0, 128);
+  border-color: rgb(95, 0, 128);
+}
+#header .row.row3 .container > div.right {
+  width: 100%;
+  max-width: 225px;
+  display: flex;
+  justify-content: flex-end;
+}
+#header .row.row3 .container > div.right.on {
+  display: none;
+}
+#header .row.row3 .container > div.right span {
+  font-size: 13px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+#header .row.row3 .container > div.right span strong {
+  color: rgb(95, 0, 128);
+}
+#header .row.row3 .container > div.right span em {
+  color: rgb(102, 102, 102);
+  margin-left: 5px;
+}

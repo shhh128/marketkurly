@@ -1,0 +1,20 @@
+{
+    "이메일회사리스트":[
+        {"코드번호":"sub5-email-01", "이메일회사":"naver.com"},
+        {"코드번호":"sub5-email-02", "이메일회사":"gmail.com"},
+        {"코드번호":"sub5-email-03", "이메일회사":"hanmail.net"},
+        {"코드번호":"sub5-email-04", "이메일회사":"kakao.com"},
+        {"코드번호":"sub5-email-05", "이메일회사":"daum.net"},
+        {"코드번호":"sub5-email-06", "이메일회사":"hotmail.com"},
+        {"코드번호":"sub5-email-07", "이메일회사":"yahoo.co.kr"},
+        {"코드번호":"sub5-email-08", "이메일회사":"직접 입력"}
+    ]
+}
+
+
+
+
+
+
+
+

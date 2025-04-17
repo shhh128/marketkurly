@@ -1,0 +1,16 @@
+#section3 {
+  width: 100%;
+  padding-top: 90px;
+}
+#section3 .container {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+#section3 .container .content a {
+  display: block;
+  width: 100%;
+}
+#section3 .container .content a img {
+  width: 100%;
+}

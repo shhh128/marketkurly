@@ -1,0 +1,18 @@
+#section3 {
+    width: 100%;
+    padding-top: 90px;
+    .container {
+        width: 100%;
+        max-width: 1050px;
+        margin: 0 auto;
+        .content {
+            a {
+                display: block;
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

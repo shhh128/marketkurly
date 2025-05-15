@@ -20,14 +20,14 @@ React를 중심으로 한 트렌디한 프론트엔드 기술 스택에 익숙�
 
 ### 📦 폴더 구조
 marketkurly
- 📂 PHP_MYSQL
- 📂 public
-   📂 css
-   📂 data
-   📂 images
- 📂 src
-   📂 component
-   📂 store
+ ┣ 📂 PHP_MYSQL
+ ┣ 📂 public
+  ┣ 📂 css
+  ┣ 📂 data
+  ┗ 📂 images
+ ┗ 📂 src
+  ┣ 📂 component
+  ┗ 📂 store
  
 - 파일을 찾기 쉽게 분리해 유지보수성을 높이고자 함
 - 반복되는 UI 요소와 기능은 커스텀 컴포넌트와 커스텀 훅으로 별도 추출하여 재사용성 확보

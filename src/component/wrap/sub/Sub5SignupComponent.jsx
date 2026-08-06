@@ -3,7 +3,7 @@ import './scss/Sub5SignupComponent.scss';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import InputComponent from './use_custom_component/InputComponent';
-import CryptoJS from 'crypto-js';
+// import CryptoJS from 'crypto-js';
 import { useNavigate } from 'react-router-dom';
 
 export default function Sub5SignupComponent({kakaoModalOpen}) {
@@ -127,35 +127,77 @@ export default function Sub5SignupComponent({kakaoModalOpen}) {
     // . 문자
     // {6,}  6자이상 범위
     // {6,16} 6자 ~ 16자 범위
-    // 전체 g 시작 ^ 과 끝 $ 모든문자 검사
+    // 전체 g 시작 ^ 과 끝 $ 모든문자 검사   
     const onChangeUserId=(e)=>{
-        let regExp1 = /^(.){6,16}$/g;        // 6자 이상 16자 이하
-        let regExp2 = /^[A-Za-z]+[0-9]*$/g;  // 영문 필수 숫자 선택
-        let 아이디 = e.target.value;
-        let 아이디_가이드텍스트 = '';
-        let 아이디유효성검사 = null;
-        let 아이디중복검사 = null;
+    let regExp1 = /^(.){6,16}$/g;
+    let regExp2 = /^[A-Za-z]+[0-9]*$/g;
+    let 아이디 = e.target.value;
+    // 검사 중에는 기존 문구 유지, 서버 응답 왔을 때만 결과 바꿈
+    let 아이디_가이드텍스트 = state.아이디_가이드텍스트;
+    let 아이디유효성검사 = null;
+    let 아이디중복검사 = null;
 
-        if(regExp1.test(아이디)===false || regExp2.test(아이디)===false){
-            아이디_가이드텍스트 = '6자 이상 16자 이하의 영문 혹은 영문과 숫자를 조합';
-            아이디유효성검사=false;
-            아이디중복검사=false;
-        }
-        else {
-            아이디_가이드텍스트 = ''; // 없어도됨
-            아이디유효성검사=true;
-            아이디중복검사=true;
-        }
-        
-        setState({
-            ...state,
-            아이디: 아이디,
-            아이디_가이드텍스트: 아이디_가이드텍스트,
-            아이디유효성검사: 아이디유효성검사,
-            아이디중복검사: 아이디중복검사
+    if(regExp1.test(아이디)===false || regExp2.test(아이디)===false){
+        아이디_가이드텍스트 = '6자 이상 16자 이하의 영문 혹은 영문과 숫자를 조합';
+        아이디유효성검사 = false;
+        아이디중복검사 = false;
+    }
+    else {
+        아이디유효성검사 = true;
+        // 중복 검사 추가
+        아이디중복검사 = false;
+
+        const formData = new FormData();
+        formData.append('user_id', 아이디);
+
+        axios({
+            url: '/marketkurly/id_check.php',
+            method: 'POST',
+            data: formData
         })
+        .then((res)=>{
+            const isDuplicate = Number(res.data) === 1;
+
+            setState((prev)=>{
+                // 요청하는 동안 입력값이 바뀌었다면 이전 검사 결과 무시
+                if(prev.아이디 !== 아이디){
+                    return prev;
+                }
+
+                return {
+                    ...prev,
+                    아이디중복검사: !isDuplicate,
+                    아이디_가이드텍스트: isDuplicate
+                        ? '이미 사용 중인 아이디입니다.'
+                        : ''
+                };
+            });
+        })
+        .catch((err)=>{
+            console.log(err);
+
+            setState((prev)=>{
+                if(prev.아이디 !== 아이디){
+                    return prev;
+                }
+
+                return {
+                    ...prev,
+                    아이디중복검사: false,
+                    아이디_가이드텍스트: '아이디 중복 확인에 실패했습니다.'
+                };
+            });
+        });
     }
     
+    setState({
+        ...state,
+        아이디: 아이디,
+        아이디_가이드텍스트: 아이디_가이드텍스트,
+        아이디유효성검사: 아이디유효성검사,
+        아이디중복검사: 아이디중복검사
+    });
+}
     // 2. 비밀번호(userPw)
     // - 자료형: 문자열 String
     // - 상태변수: 비밀번호1
@@ -269,7 +311,7 @@ export default function Sub5SignupComponent({kakaoModalOpen}) {
     // moonseonjong => 사용불가능 @ 좌측  @ ( ) \ , ; : " 공백
     // @ 
     // naver.com => 사용가능 . ~
-    // "사용 가능한 이메일 입니다."
+    // "사용 가능한 이메일입니다."
     // "이메일 형식으로 입력해 주세요."
 
     // 이메일 리스트 토글버튼 
@@ -297,7 +339,7 @@ export default function Sub5SignupComponent({kakaoModalOpen}) {
             이메일중복검사 = false;
         }
         else {
-            이메일_가이드텍스트 = '사용 가능한 이메일 입니다.';
+            이메일_가이드텍스트 = '사용 가능한 이메일입니다.';
             이메일유효성검사 = true;
             이메일중복검사 = true;
         }
@@ -325,7 +367,7 @@ export default function Sub5SignupComponent({kakaoModalOpen}) {
             이메일중복검사 = false;
         }
         else {
-            이메일_가이드텍스트 = '사용 가능한 이메일 입니다.';
+            이메일_가이드텍스트 = '사용 가능한 이메일입니다.';
             이메일유효성검사 = true;
             이메일중복검사 = true;
         }
@@ -340,30 +382,69 @@ export default function Sub5SignupComponent({kakaoModalOpen}) {
     }
 
     // 이메일1 이메일2
+    // 중복 검사 추가
     useEffect(()=>{
-        // 정규표현식
-        let 이메일_가이드텍스트='';
-        let 이메일유효성검사 = null;
-        let 이메일중복검사 = null;
-        if(state.이메일1!=='' && state.이메일2!==''){
-            이메일_가이드텍스트 = '사용 가능한 이메일 입니다.';
-            이메일유효성검사 = true;
-            이메일중복검사 = true;
+        // 두 칸 중 하나라도 비어 있으면 검사하지 않음
+        if(state.이메일1 === '' || state.이메일2 === ''){
+            setState((prev)=>({
+                ...prev,
+                이메일_가이드텍스트: '이메일 형식으로 입력해 주세요.',
+                이메일유효성검사: false,
+                이메일중복검사: false
+            }));
+
+            return;
         }
-        else {
-            이메일_가이드텍스트 = '이메일 형식으로 입력해 주세요.';
-            이메일유효성검사 = false;
-            이메일중복검사 = false;
-        }
-        setState({
-            ...state,
-            이메일_가이드텍스트: 이메일_가이드텍스트,
-            이메일유효성검사: 이메일유효성검사,
-            이메일중복검사: 이메일중복검사
+
+        const userEmail = `${state.이메일1}@${state.이메일2}`;
+
+        // DB 확인 전에는 회원가입되지 않도록 false
+        setState((prev)=>({
+            ...prev,
+            이메일유효성검사: true,
+            이메일중복검사: false
+        }));
+
+        const formData = new FormData();
+        formData.append('user_email', userEmail);
+
+        axios({
+            url: '/marketkurly/email_check.php',
+            method: 'POST',
+            data: formData
         })
-        
+        .then((res)=>{
+            const isDuplicate = Number(res.data) === 1;
+
+            setState((prev)=>{
+                // 요청하는 동안 이메일이 바뀌었다면 이전 결과 무시
+                const currentEmail = `${prev.이메일1}@${prev.이메일2}`;
+
+                if(currentEmail !== userEmail){
+                    return prev;
+                }
+
+                return {
+                    ...prev,
+                    이메일중복검사: !isDuplicate,
+                    이메일_가이드텍스트: isDuplicate
+                        ? '이미 사용 중인 이메일입니다.'
+                        : '사용 가능한 이메일입니다.'
+                };
+            });
+        })
+        .catch((err)=>{
+            console.log('이메일 중복 확인 오류:', err);
+
+            setState((prev)=>({
+                ...prev,
+                이메일중복검사: false,
+                이메일_가이드텍스트: '이메일 중복 확인에 실패했습니다.'
+            }));
+        });
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[state.이메일1, state.이메일2]);
+    }, [state.이메일1, state.이메일2]);
 
     // 이메일2 회사 선택 이벤트
     const onClickEmailCompany=(e, 이메일회사)=>{
@@ -746,25 +827,26 @@ export default function Sub5SignupComponent({kakaoModalOpen}) {
         else {
 
             // 1. 비밀번호 암호화 저장
-            // 1-1 imort CryptoJS from 'crypto-js';
+            // 1-1 import CryptoJS from 'crypto-js';
             // 1-2 암호화
             // const 비밀번호_암호화 = CryptoJS.AES.encrypt(비밀번호문자열.개인키암호);
-            const 비밀번호_암호화된것 = CryptoJS.AES.encrypt(state.비밀번호1, 'shhh128');
-            console.log('비밀번호_암호화된것', 비밀번호_암호화된것);
-            console.log('비밀번호_암호화된것',비밀번호_암호화된것.toString()); // 문자열로 변경
+            // const 비밀번호_암호화된것 = CryptoJS.AES.encrypt(state.비밀번호1, 'shhh128');
+            // console.log('비밀번호_암호화된것', 비밀번호_암호화된것);
+            // console.log('비밀번호_암호화된것',비밀번호_암호화된것.toString()); // 문자열로 변경
 
             // 2. 비밀번호 복호화 확인
             // 2-1 복호화
-            const 비밀번호_복호화된것 = CryptoJS.AES.decrypt(비밀번호_암호화된것, 'shhh128');
-            console.log('비밀번호_복호화된것', 비밀번호_복호화된것);
+            // const 비밀번호_복호화된것 = CryptoJS.AES.decrypt(비밀번호_암호화된것, 'shhh128');
+            // console.log('비밀번호_복호화된것', 비밀번호_복호화된것);
 
             // 2-2 복호화 => 완전한 문자 데이터로 인코딩 변환
-            console.log('비밀번호_복호화된것', 비밀번호_복호화된것.toString(CryptoJS.enc.Utf8));
+            // console.log('비밀번호_복호화된것', 비밀번호_복호화된것.toString(CryptoJS.enc.Utf8));
             
 
             let formData = new FormData();
             formData.append('user_id', state.아이디);
-            formData.append('user_pw', CryptoJS.AES.encrypt(state.비밀번호1, 'shhh128').toString());
+            // formData.append('user_pw', CryptoJS.AES.encrypt(state.비밀번호1, 'shhh128').toString());
+            formData.append('user_pw', state.비밀번호1);
             formData.append('user_name', state.이름);
             formData.append('user_email', `${state.이메일1}@${state.이메일2}`);
             formData.append('user_hp', state.휴대폰);

@@ -1,3 +1,5 @@
 node_modules/
 build/
 .DS_Store
+.env
+PHP_MYSQL/db.php

@@ -127,12 +127,12 @@ export default function Section2Component() {
         if(localStorage.getItem('view_product_list')!==null ){
             const result = JSON.parse(localStorage.getItem('view_product_list'));
             // 중복검사
-            const imsi = result.map((item)=>item.상품번호.includes(obj.지금본상품.상품번호) ? true : false);
-            if(imsi.includes(true)===true){
-                arr = result;  // 그대로로
-            }
-            else{                
-                arr = [obj.지금본상품, ...result]; // 추가
+            const isDuplicate = result.some((item) => item.상품번호 === obj.지금본상품.상품번호);
+            if (isDuplicate) {
+                arr = result; // 그대로 유지
+            } 
+            else {
+                arr = [obj.지금본상품, ...result]; // 새로 추가
             }
         }
         else{

@@ -1,15 +1,10 @@
-<?
+<?php
 
-    $DB_SERVER = 'localhost';
-    $DB_USER_NAME = 'j8926267';
-    $DB_USER_PW = 'jungsh120!';
-    $DB_NAME = 'j8926267';
-
-    $conn = mysqli_connect($DB_SERVER, $DB_USER_NAME, $DB_USER_PW, $DB_NAME);
-    mysqli_set_charset($conn, 'utf8');
+    require_once __DIR__ . '/db.php';
 
     $user_id = $_POST['user_id'];
-    $user_pw = $_POST['user_pw'];
+    // 비밀번호 해시값으로 변경
+    $user_pw = password_hash($_POST['user_pw'], PASSWORD_DEFAULT);
     $user_name = $_POST['user_name'];
     $user_email = $_POST['user_email'];
     $user_hp = $_POST['user_hp'];

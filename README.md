@@ -1,141 +1,70 @@
-# 🧑‍💻 Portfolio_정서현
-안녕하세요, 사용자 중심의 웹을 개발하는 프론트엔드 개발자 정서현입니다. 
-다양한 프로젝트를 통해 실제 서비스 구현을 경험하며 빠르게 성장해왔습니다. 
-사용자 중심의 UI/UX 구현, 반응형 웹, API 통신, 상태 관리, 그리고 협업 능력을 바탕으로 완성도 높은 프로젝트를 다수 수행했습니다. 
-React를 중심으로 한 트렌디한 프론트엔드 기술 스택에 익숙하며, 사용자 경험을 최우선으로 고려한 UI/UX 설계에 관심이 많습니다. 
-아래는 제가 개발한 주요 프로젝트들입니다.
+# Getting Started with Create React App
 
-## 1. 🛒 마켓컬리 클론 개인 프로젝트
-- URL: http://j8926267.dothome.co.kr/marketkurly
-- Github: https://shhh128.github.io/marketkurly
-- 제작 기간: 2024.11 ~ 2025.01
-- 기술 스택: React, HTML, CSS, JavaScript, PHP, MySQL
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### 🧩 주요 기능
-- 배너 자동 슬라이드, 상품 슬라이드 구현
-- 기한 설정 타이머 기능, 최근 본 상품
-- 상품 목록 및 필터 기능, 상세페이지 
-- 장바구니 기능, 배송지 설정
-- 회원가입 및 로그인 (유효성 검사 포함)
+## Available Scripts
 
-### 📦 폴더 구조
-marketkurly
- ┣ 📂 PHP_MYSQL
- ┣ 📂 public
-  ┣ 📂 css
-  ┣ 📂 data
-  ┗ 📂 images
- ┗ 📂 src
-  ┣ 📂 component
-  ┗ 📂 store
- 
-- 유지보수성을 높이기 위해 기능별 폴더로 구분
-- 반복되는 UI와 로직은 커스텀 컴포넌트 및 훅으로 분리하여 재사용성 강화
+In the project directory, you can run:
 
-### 🎯 문제 해결
-- 로그인 후 새로고침 시 세션이 초기화되어 로그인 상태가 풀리는 현상
-  → 세션 유지 방식에서 localStorage를 이용하여 로그인 상태를 전역에서 관리하도록 변경
-- 상품 상세페이지 진입 시 map 오류
-  → data 파일 내 누락된 정보 보완 후 정상 작동 확인
+### `npm start`
 
-### 📘 러닝 포인트
-- 프론트엔드뿐 아니라 백엔드까지 함께 구현하며, 클라이언트-서버 간 데이터 흐름에 대한 이해가 높아졌습니다.
-- 상태관리와 라우팅, 인증 처리까지 이어지는 일련의 흐름을 직접 설계하며 실무에서의 전체 개발 흐름을 체감할 수 있었습니다.
-- 다양한 상태에 따른 UI 변경 처리의 복잡도를 경험하며 조건문, 이벤트 흐름 설계 역량을 강화시킬 수 있었습니다.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## 2. 📱 프리스비 독립형 쇼핑몰 팀프로젝트
-- URL: http://j8926267.dothome.co.kr/frisbee
-- 제작 기간: 2024.12 ~ 2025.02
-- 기술 스택: React, HTML, CSS, JavaScript, PHP, MySQL, Figma
-- 기여도: 40% (팀원 4명)
-- 담당 부분: 메인 페이지의 한정수량 타임딜 섹션
-           Mac 액세서리 카테고리 ~ Footer
-           서브페이지 Apple, 회원가입 및 로그인
+### `npm test`
 
-### 🧩 주요 기능
-- 상품 슬라이드, 클릭 이동 기능
-- 액세서리 목록, 북마크 모달창 구현
-- 메뉴 토글 기능, 배너 슬라이드 드래그앤드롭
-- 회원가입 및 로그인 (유효성 검사 포함)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### 🎯 문제 해결
-- 팀원들과 분업을 통한 코드 병합 과정에서 UI 레이아웃 충돌 발생
-  → 코드 규칙을 설정하고 중복되지 않는 id/class 사용
-- 반복문 사용한 하나의 북마크 버튼 호버 시 모든 북마크 이미지 변경
-  → html이 아닌 scss에서 background로 image 삽입, 호버 시 background-image로 이미지 변경
-- 슬라이드 드래그앤드롭 시 특정 위치에 멈추지 않거나 계속 움직이는 오류
-  → 한 칸의 너비보다 더 드래그하면 두 칸 이동하도록 드래그 시작 부분에서 e.clientX를 뺀 값을 한칸너비만큼 나눈 것을 cnt 증감함수에 적용
+### `npm run build`
 
-### 📘 러닝 포인트
-- 반복 렌더링 시 발생한 전역 호버 이슈를 해결하면서, React의 렌더링 방식과 DOM 구조의 차이를 명확히 이해하게 되었습니다.
-- 팀을 리드하며 협업과 커뮤니케이션을 통해 문제를 해결하고 사용자 중심의 완성도를 향상시켰습니다.
-- 서비스 기획부터 배포까지 완성하는 경험 속에서 역할 책임감을 가지고 작업을 완수하는 과정을 통해 실무의 흐름을 미리 경험할 수 있었습니다.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## 3. 👔 Hongo 반응형 개인 프로젝트
-- URL: http://j8926267.dothome.co.kr/Hongo
-- 제작 기간: 2025.01
-- 기술 스택: HTML, CSS, JavaScript, jQuery
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### 🧩 주요 기능
-- 메인 자동 슬라이드 배너 구현
-- 상단 이동 퀵메뉴 기능
-- 스크롤 인터랙션 기반 애니메이션 구현
-- 반응형 웹 디자인 구현
+### `npm run eject`
 
-### 🎯 문제 해결
-- 슬라이드 자동 전환 중 버튼 클릭 시 애니메이션 중첩
-  → 버튼 클릭 시 기존 interval을 clearInterval로 해제한 뒤 다시 설정해 중첩 방지
-- 스크롤 시 애니메이션이 빠르게 실행됨
-  → window scrollTop값이 각 섹션 top값에 진입 시 실행되도록 설정
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### 📘 러닝 포인트
-- 컴포넌트 기반 프레임워크 React와 달리 직접 DOM을 제어하며 흐름을 이해하게 되었습니다.
-- 사용자 편의를 위해 반응형을 고려한 웹 페이지를 구성하는 법을 익혔습니다.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## 4. ☑️ 투두리스트 개인 프로젝트
-- URL: http://j8926267.dothome.co.kr/to_do_list
-- 제작 기간: 2024.11
-- 기술 스택: React, HTML, CSS, JavaScript, PHP, MySQL
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### 🧩 주요 기능
-- 할 일 추가, 수정, 완료, 삭제 기능 구현
-- 마감 기한 설정, 완료된 할 일 표시
-- PHP, MySQL과 Axios를 통한 CRUD API 연동
+## Learn More
 
-### 🎯 문제 해결
-- 새로고침 시 전체 목록 초기화,
-  resData.map에서 null 관련 TypeError 발생,
-  삭제 버튼 클릭 시 DB에서는 삭제되지만 화면에는 반영되지 않음
-  → GET > SET > DELETE 전 사이클과 API 연동 흐름 재파악 후 PHP에서 json_encode와 배열 초기화 조건 재점검하여 $arr 선언 위치 수정
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### 📘 러닝 포인트
-- 프론트-백엔드 연결에서 상태관리, 비동기 흐름의 중요성을 경험하였습니다.
-- 단순 CRUD 기능에도 다양한 문제가 얽혀 있을 수 있다는 점을 몸소 체감하며, 디버깅과 테스트의 중요성을 인식하였습니다.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
-## 5. 👕 무신사 플랫폼 팀프로젝트
-- URL: https://www.i-web.kr/green12
-- 기간: 2024.11 ~ 2024.12
-- 기술 스택: 아이웹, 포토샵, Figma
-- 기여도: 35% (팀원 4명)
-- 담당 부분: 랭킹 및 세일 서브페이지 디자인 및 구현
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### 🧩 주요 기능
-- 아이웹 플랫폼에서 무신사 PC버전으로 재현
-- 서브페이지, 상품 카테고리, 상세페이지 구성
-- 상품 상세 페이지에 브랜드, 사이즈, 가격 등 정보 추가
-- 장바구니부터 결제 프로세스까지 흐름 구성
+### Analyzing the Bundle Size
 
-### 🎯 문제 해결
-- 디자인 요소 커스터마이징의 제한
-  → 배너 이미지를 Photoshop으로 사전 제작하여 삽입
-- 다양한 상품 정보를 반복해서 입력하는 과정에서 혼동 발생
-  → 공통되는 상품 구성 템플릿을 미리 만들어 일관성 있게 입력
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### 📘 러닝 포인트
-- 플랫폼을 사용하여 웹을 제작하는 경험을 하였습니다.
-- UI 구조나 이미지 구성에 대한 의견을 주고받으며, 역할을 분담하고 스타일을 통일하는 과정에서 실무에 가까운 협업 경험을 쌓을 수 있었습니다.
-- 페이지를 직접 기획하고 작성함으로써, 디자인 → 콘텐츠 구성 → 구매 전환 흐름을 고려하여 제작하였습니다.
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

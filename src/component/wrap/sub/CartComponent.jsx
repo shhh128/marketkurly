@@ -231,6 +231,11 @@ export default function CartComponent() {
         localStorage.setItem('CART_PRODUCT_2025', JSON.stringify(obj.장바구니))  // []       
     }
 
+    const onClickOrder=(e)=>{
+        e.preventDefault();
+        alert('해당 기능은 준비중입니다.');
+    }
+
     return (
         <main id='cart'>
             <section id="section1">
@@ -421,7 +426,7 @@ export default function CartComponent() {
                                             onChange={onChangeCheckAll}
                                             checked={체크리스트.length===state.장바구니.length}                                          
                                         />
-                                        <span>전체선택 (0/0)</span>    
+                                        <span>전체선택 ({체크리스트.length}/{state.장바구니.length})</span>
                                     </label>    
                                     <button onClick={onClickDeleteSelect}>선택삭제</button>
                                 </div>
@@ -438,7 +443,7 @@ export default function CartComponent() {
                                 </ul>
                             </div>                            
                             <div className="button-box">
-                                <button>로그인</button>                               
+                                <button onClick={onClickOrder}>주문하기</button>
                             </div>
                             <div className="info-box">
                                 <p>

@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# 🛒 마켓컬리
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React, PHP, MySQL을 활용해 마켓컬리의 주요 쇼핑 기능을 구현한 개인 프로젝트입니다.
 
-## Available Scripts
+상품 탐색부터 회원가입, 로그인, 장바구니까지 사용자가 쇼핑몰을 이용하는 전체 흐름을 직접 구현했습니다.
 
-In the project directory, you can run:
+## 📌 프로젝트 정보
 
-### `npm start`
+* 제작 기간: 2024.11 ~ 2025.01
+* 개발 형태: 개인 프로젝트
+* 배포 주소: http://j8926267.dothome.co.kr/marketkurly
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠 기술 스택
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Frontend: React, HTML, CSS, JavaScript
+* Backend: PHP
+* Database: MySQL
+* API 통신: Axios
 
-### `npm test`
+## 🧩 주요 기능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* 메인 배너 자동 슬라이드
+* 상품 슬라이드 및 상세페이지
+* 기한을 설정한 타임딜 타이머
+* 최근 본 상품 저장
+* 상품 목록 필터 및 페이지네이션
+* 장바구니 상품 추가 및 삭제
+* 배송지 설정
+* 회원가입 및 로그인
+* 아이디와 이메일 중복 확인
+* 입력값 유효성 검사
 
-### `npm run build`
+## 📦 폴더 구조
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```text
+marketkurly
+├── PHP_MYSQL
+├── public
+│   ├── css
+│   ├── data
+│   └── images
+└── src
+    ├── component
+    └── store
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+기능과 화면에 따라 컴포넌트를 구분하고, 여러 화면에서 사용하는 상태는 별도로 관리했습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🎯 문제 해결
 
-### `npm run eject`
+### 로그인 후 새로고침하면 로그인 상태가 풀리는 문제
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+로그인 정보를 React 상태로만 관리해 새로고침 시 초기화되는 문제가 발생했습니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+로그인에 필요한 정보를 브라우저 저장소에 저장하고, 페이지가 다시 실행될 때 저장된 정보를 불러오도록 수정해 로그인 상태가 유지되게 했습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 상품 상세페이지에서 발생한 `map` 오류
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+일부 상품 데이터에 화면에서 사용하는 값이 누락되어 `map` 실행 중 오류가 발생했습니다.
 
-## Learn More
+상품 데이터의 구조와 상세페이지에서 참조하는 값을 비교해 누락된 정보를 보완하고 정상적으로 화면이 표시되는 것을 확인했습니다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📘 배운 점
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* React와 PHP 사이에서 데이터를 요청하고 응답받는 흐름을 익혔습니다.
+* 상품, 로그인, 장바구니 등 여러 화면에서 사용하는 상태를 관리해보았습니다.
+* 회원가입과 로그인 기능을 구현하며 입력값 검사와 인증 처리 흐름을 이해했습니다.
+* 오류가 발생했을 때 화면과 상태, 데이터, API 요청을 나누어 확인하는 방법을 익혔습니다.

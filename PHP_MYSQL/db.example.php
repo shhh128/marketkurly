@@ -1,10 +1,11 @@
 <?php 
 
-    // 
+    // 데이터베이스 접속 정보
     $DB_SERVER ='localhost';
     $DB_USER_NAME = 'DB_USERNAME';
     $DB_USER_PW = 'DB_PASSWORD';
     $DB_NAME = 'DB_NAME';
+
     // 데이터베이스 연결
     $conn = mysqli_connect($DB_SERVER, $DB_USER_NAME, $DB_USER_PW, $DB_NAME);
 
